@@ -3,9 +3,8 @@ angular.module('musicBrainzSearchApp.controllers', []).
   controller('searchController', function($scope, musicBrainzAPIservice) {
     
     this.searchTerm = "";
-    this.selectedValue = "Audi";
     this.selectedOptionValue = 'artist';
-    this.options = ['artist', 'Recordings', 'Mercedes','Toyota'];
+    this.options = ['artist', 'recording', 'release','area'];
         
     this.selectedOption = function selectedOption() {
     musicBrainzAPIservice.searchTerm = this.searchTerm;

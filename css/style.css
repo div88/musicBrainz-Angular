@@ -44,7 +44,7 @@ select{
 }
 
 .searchName{
-  width:40%;
+ /* width:40%;*/
 }
 
 .tableContainer{
@@ -54,5 +54,32 @@ select{
 
 
 @media screen and (max-width: 550px){
+  .table-responsive{
+    padding-left:0 !important;
+    padding-right: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
   
+  .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding-left: 1px !important; 
+    padding-right: 2px !important;
+  }
+
+  .tableContainer{
+    width:100%;
+    
+  }
+  
+  .searchName{
+   /*  width:10%;*/
+    width:1%;
+  }
+  
+  td.wide-col, th.wide-col {
+    width: 1%;
+  }
+  
+  td.wide-col{
+  }
 }

@@ -35,7 +35,7 @@
   </div>
 
  <!--  <div class=" "> -->
-  <table class="table col-md-12 table-responsive tableContainer">
+  <table class="table col-md-12 table-responsive tableContainer" ng-show="{search.selectedOptionValue == 'artist'}">
     <thead>
       <tr class="searchResultsHeaders" ng-show="search.searchTerm">
 		<th class="col-md-1 small-col">Score</th>
@@ -60,7 +60,37 @@
   </table>
  <!--  </div> -->
 
- 
+  <!--  <div class=" "> -->
+  <table class="table col-md-12 table-responsive tableContainer" ng-show="{search.selectedOptionValue == 'recording'}">
+    <thead>
+      <tr class="searchResultsHeaders" ng-show="search.searchTerm">
+		<th class="col-md-1 small-col">Score</th>
+		<th class="col-md-1 wide-col searchName">Name</th>
+		<!-- <th class="col-md-1 small-col">Sort-Name</th> -->
+		<th class="col-md-1 small-col">Length</th>
+		<th class="col-md-1 small-col">Artist</th>
+		<th class="col-md-1 small-col">Release</th>
+		<th class="col-md-1 small-col">Track</th>
+		<th class="col-md-1 small-col">Medium</th>
+		<th class="col-md-1 small-col">Type</th>
+		<th class="col-md-1 small-col">Area</th>
+	  </tr>
+    </thead>
+    <tbody>
+      <tr ng-show="search.searchTerm" ng-repeat="artist in artists" class="searchResults">
+        <td class="col-md-1 small-col">{{artist.score}}</td>
+		<td class="col-md-1 wide-col searchName">
+		  <a ng-href="http://musicbrainz.org/artist/{{artist.id}}">{{artist.name}}</a><br/>
+		  <span>{{artist.disambiguation}}</span>
+		</td>
+		<!-- <td class="col-md-1 small-col">{{artist.isString(sort-name)}}</td> -->
+		<td class="col-md-1 small-col">{{artist.type}}</td>
+		<td class="col-md-1 small-col">{{artist.area.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+ <!--  </div> -->
+
  
 </body>
 </html>
